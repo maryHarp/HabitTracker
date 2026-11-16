@@ -12,7 +12,9 @@
 
         private void AddHabit_Pressed(object sender, EventArgs e)
         {
+            Label child = new Label() { Text = "Test", WidthRequest = 350, FontSize = 28};
 
+            Habits.Add(child);
         }
     }
 }
