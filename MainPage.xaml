@@ -14,7 +14,7 @@
         <Border Grid.Row="1" Stroke="Red" Margin="5, 10">
             <FlexLayout Direction="Row" JustifyContent="SpaceEvenly">
                 <Entry x:Name="BasicTextEntry" WidthRequest="350" FontSize="28" BackgroundColor="Grey"/>
-                <Button Text="Add Habit" FontSize="28"/>
+                <Button Text="Add Habit" FontSize="28" Pressed="AddHabit_Pressed"/>
             </FlexLayout>
         </Border>
 
