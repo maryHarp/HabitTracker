@@ -12,6 +12,7 @@
                 HeightRequest="185"
                 Aspect="AspectFit"
                 SemanticProperties.Description="dot net bot in a submarine number ten" />
+            <!-- if you see this, it worked -->
 
             <Label
                 Text="Hello, World!"
