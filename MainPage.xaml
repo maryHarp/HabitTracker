@@ -5,18 +5,14 @@
 
     <Grid RowDefinitions="5*, *">
         
-        <Border Grid.Row="0" Stroke="Blue" Margin="300, 20">
-            <FlexLayout x:Name="Habits" Direction="Column" JustifyContent="SpaceEvenly" >
-                
-            </FlexLayout>
+        <Border Grid.Row="0" Margin="300, 20">
+            <FlexLayout x:Name="Habits" Direction="Column" JustifyContent="SpaceEvenly"/>
         </Border>
-        
-        <Border Grid.Row="1" Stroke="Red" Margin="5, 10">
-            <FlexLayout Direction="Row" JustifyContent="SpaceEvenly">
-                <Entry x:Name="BasicTextEntry" WidthRequest="350" FontSize="28" />
-                <Button Text="Add Habit" FontSize="28" Pressed="AddHabit_Pressed"/>
-            </FlexLayout>
-        </Border>
+
+        <FlexLayout Grid.Row="1" Direction="Row" JustifyContent="SpaceEvenly">
+            <Entry x:Name="BasicTextEntry" WidthRequest="350" FontSize="28" BackgroundColor="Grey" />
+            <Button Text="Add Habit" FontSize="28" Pressed="AddHabit_Pressed"/>
+        </FlexLayout>
 
     </Grid>
 
