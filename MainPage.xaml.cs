@@ -1,6 +1,4 @@
-﻿using HabitTracker.Models;
-
-namespace HabitTracker
+﻿namespace HabitTracker
 {
     public partial class MainPage : ContentPage
     {
@@ -14,13 +12,7 @@ namespace HabitTracker
 
         private void AddHabit_Pressed(object sender, EventArgs e)
         {
-            Habit newHabit = new Habit() { Goal="Test", CreationDate=1, Identifier=1, Streak=1};
-            Label child = new Label() { Text=newHabit.Goal, FontSize=28};
-
-            //Binding b = new Binding(path: "Text", source: BasicTextEntry, mode: BindingMode.OneWay);
-
-            //Habits.SetBinding(Label.TextProperty, b);
-
+            Label child = new Label() { Text="Test", FontSize=28 };
             Habits.Add(child);
         }
     }
