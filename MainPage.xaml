@@ -7,7 +7,7 @@
         
         <Border Grid.Row="0" Stroke="Blue" Margin="300, 20">
             <FlexLayout x:Name="Habits" Direction="Column" JustifyContent="SpaceEvenly" >
-                <Label Text="{Binding Source={x:Reference BasicTextEntry}, Path=Text, Mode=OneWay}" WidthRequest="350" FontSize="28"/>
+                <Label Text="{Binding Source={x:Reference BasicTextEntry}, Path=Text, Mode=OneWay}" FontSize="28"/>
             </FlexLayout>
         </Border>
         
