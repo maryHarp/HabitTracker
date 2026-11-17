@@ -17,7 +17,7 @@ namespace HabitTracker
         private void AddHabit_Pressed(object sender, EventArgs e)
         {
             List <Habit> allHabits = new();
-            Habit newHabit = new Habit() { Goal=BasicTextEntry.Text, CreationDate=1, Identifier=1, Streak=1};
+            Habit newHabit = new Habit() { Goal=BasicTextEntry.Text, CreationDate=1, Identifier=1, Streak=0};
             allHabits.Add(newHabit);
 
             for (int i = 0; i < allHabits.Count(); i++ )
