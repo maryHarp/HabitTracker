@@ -12,9 +12,9 @@
         {
             // Handle login logic here
         }
-        private void OnSignUpClicked(object? sender, EventArgs e)
+        private async void OnSignUpClicked(object? sender, EventArgs e)
         {
-            // Handle sign-up logic here
+            await Navigation.PushAsync(new SignUpPage());
         }
     }
 }
