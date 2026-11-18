@@ -1,6 +1,0 @@
-<ContentPage x:Class="HabitTracker.EditOptions"
-             Title="EditOptions">
-    <HorizontalStackLayout>
-        
-    </HorizontalStackLayout>
-</ContentPage>
