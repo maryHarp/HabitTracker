@@ -7,7 +7,6 @@ namespace HabitTracker
     public partial class MainPage : ContentPage
     {
         int count = 0;
-        //Test Comment (Paxton)2
 
         public MainPage()
         {
@@ -25,6 +24,8 @@ namespace HabitTracker
                 Label child = new Label() { Text=allHabits.ElementAt(i).Goal, FontSize=28};
                 Habits.Add(child);
             }
+
+            BasicTextEntry.Text = "";
         }
     }
 }
