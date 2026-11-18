@@ -1,25 +1,31 @@
-﻿namespace HabitTracker
+﻿using HabitTracker.Models;
+using Microsoft.Maui.Graphics;
+using System.Security.Cryptography.X509Certificates;
+
+namespace HabitTracker
 {
     public partial class MainPage : ContentPage
     {
         int count = 0;
-        //Test Comment (Paxton)2
 
         public MainPage()
         {
             InitializeComponent();
         }
 
-        private void OnCounterClicked(object? sender, EventArgs e)
+        private void AddHabit_Pressed(object sender, EventArgs e)
         {
-            count++;
+            List <Habit> allHabits = new();
+            Habit newHabit = new Habit() { Goal=BasicTextEntry.Text, CreationDate=1, Identifier=1, Streak=0};
+            allHabits.Add(newHabit);
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
+            for (int i = 0; i < allHabits.Count(); i++ )
+            {
+                Label child = new Label() { Text=allHabits.ElementAt(i).Goal, FontSize=28};
+                Habits.Add(child);
+            }
 
-            SemanticScreenReader.Announce(CounterBtn.Text);
+            BasicTextEntry.Text = "";
         }
     }
 }
