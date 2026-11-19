@@ -2,13 +2,13 @@
 {
     public partial class MainPage : ContentPage
     {
-        
+        int count = 0;
+        //Test Comment (Paxton)2
 
         public MainPage()
         {
             InitializeComponent();
         }
-
 
         public void CheckName(string inputName)
         {
@@ -26,7 +26,7 @@
 
         private void AddhabitButton_Clicked(object sender, EventArgs e)
         {
-            
+
 
             bool validName = false;
             while (!validName)

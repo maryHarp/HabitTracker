@@ -3,39 +3,58 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HabitTracker.MainPage">
 
-    <Grid ColumnDefinitions="*" Margin="10">
+    <Grid ColumnDefinitions="*,*" Margin="10">
 
         <!-- Left Side: Input Controls -->
-        <Border Grid.Column="0" Margin="5" Padding="425, 50">
+        <Border Grid.Column="0" Margin="5" Padding="10">
             <FlexLayout Direction="Column" JustifyContent="SpaceEvenly" AlignContent="Stretch">
 
 
                 <Label  x:Name="Prompt"
                         WidthRequest="350" 
-                        FontSize="22" >Name Your New Habit:</Label>
+                        FontSize="22"
+                        Margin="20">Name Your New Habit:</Label>
 
 
                 <!-- Text Entry Control -->
                 <Entry x:Name="BasicTextEntry" 
                    Placeholder="Type something..." 
                    WidthRequest="350" 
-                   FontSize="22" />
+                   FontSize="22"
+                   Margin="80, 20"/>
 
-                <!-- Text Entry Value View -->
-                <Label  Text="{Binding Source={x:Reference BasicTextEntry}, Path=Text, Mode=OneWay}" 
-                   WidthRequest="350" 
-                   FontSize="22" />
                 
+
 
                 <Button x:Name="AddhabitButton"
                         Text ="Add habit"
-                        Clicked="AddhabitButton_Clicked"/>
-                        
+                        Clicked="AddhabitButton_Clicked"
+                        Margin="20"/>
+
 
 
             </FlexLayout>
         </Border>
-        
+        <Border Grid.Column="1" Margin="5" Padding="10">
+
+            <!-- Right Side: View Elements (Reflecting Values via Data Binding) -->
+            <FlexLayout Grid.Column="1" 
+            Direction="Column" 
+            JustifyContent="SpaceEvenly" 
+            Padding="10">
+
+               
+
+                <!-- Text Entry Value View -->
+                <Label Text="{Binding Source={x:Reference BasicTextEntry}, Path=Text, Mode=OneWay}" 
+           WidthRequest="350" 
+           FontSize="22" />
+
+                
+
+            </FlexLayout>
+        </Border>
+
 
 
     </Grid>
