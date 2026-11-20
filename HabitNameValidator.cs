@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace HabitTracker
 {
-    internal class HabitValidator
+    internal class HabitNameValidator
     {
         public static bool TryValidateName(string name, string errorMessage)
         {
@@ -15,7 +15,7 @@ namespace HabitTracker
                 return false;
             }
 
-            string pattern = @"^[a-zA-z0-9\s+$";
+            string pattern = @"^[a-zA-z0-9\s]+$";
             if (!Regex.IsMatch(name, pattern))
             {
                 errorMessage = "Habit name can only contain letters and numbers.";
