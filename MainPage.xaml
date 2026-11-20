@@ -10,11 +10,6 @@
             <FlexLayout Direction="Column" JustifyContent="SpaceEvenly" AlignContent="Stretch">
 
 
-<<<<<<< HEAD
-            
-        </VerticalStackLayout>
-    </ScrollView>
-=======
                 <Label  x:Name="Prompt"
                         WidthRequest="350" 
                         FontSize="22"
@@ -63,6 +58,5 @@
 
 
     </Grid>
->>>>>>> origin/habitNameValidation
 
 </ContentPage>
