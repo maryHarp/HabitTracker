@@ -10,5 +10,5 @@
         Title="Make or Break it!"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
-
+    
 </Shell>

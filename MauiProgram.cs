@@ -4,6 +4,7 @@ namespace HabitTracker
 {
     public static class MauiProgram
     {
+        // test line of code
         public static MauiApp CreateMauiApp()
         {
             var builder = MauiApp.CreateBuilder();
