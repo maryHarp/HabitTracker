@@ -3,23 +3,21 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Class="HabitTracker.MainPage">
-
-    <Grid RowDefinitions="5*, *">
-
-        <Border Grid.Row="0" Margin="300, 20">
+    
+    <Grid ColumnDefinitions="*,*" RowDefinitions="5*, *" Margin="10">
+        <Border Grid.Row="0" Grid.Column="1" Margin="30, 20">
             <FlexLayout x:Name="Habits" Direction="Column" />
         </Border>
 
-        <FlexLayout Grid.Row="1" Direction="Row" JustifyContent="SpaceEvenly">
-            <Entry x:Name="NameEntry" WidthRequest="350" FontSize="28" BackgroundColor="Black"/>
-            <Entry x:Name="DescriptionEntry" WidthRequest="350" FontSize="28" BackgroundColor="Black"/>
-            <Entry x:Name="FrequencyEntry" WidthRequest="350" FontSize="28" BackgroundColor="Black"/>
+        <FlexLayout Grid.Row="1" Grid.Column="1" Direction="Row" JustifyContent="SpaceEvenly">
+            <Entry x:Name="NameEntry" Placeholder="Enter Name" WidthRequest="100" FontSize="28" />
+            <Entry x:Name="DescriptionEntry" Placeholder="Enter Description" WidthRequest="100" FontSize="28" />
+            <Entry x:Name="FrequencyEntry" Placeholder="Enter Frequency" WidthRequest="100" FontSize="28" />
             <Button Text="Add Habit" FontSize="28" Pressed="AddHabit_Pressed"/>
         </FlexLayout>
-    <Grid ColumnDefinitions="*,*" Margin="10">
 
         <!-- Left Side: Input Controls -->
-        <Border Grid.Column="0" Margin="5" Padding="10">
+        <Border Grid.Column="0" Grid.Row="0" Margin="5" Padding="10">
             <FlexLayout Direction="Column" JustifyContent="SpaceEvenly" AlignContent="Stretch">
 
 
@@ -48,7 +46,7 @@
 
             </FlexLayout>
         </Border>
-        <Border Grid.Column="1" Margin="5" Padding="10">
+        <Border Grid.Column="0" Grid.Row="1" Margin="5" Padding="10">
 
             <!-- Right Side: View Elements (Reflecting Values via Data Binding) -->
             <FlexLayout Grid.Column="1" 
