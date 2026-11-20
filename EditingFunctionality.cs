@@ -15,14 +15,7 @@ namespace HabitTracker
 
         public bool ChangeHabitName(/*Habit habit, */string name )
         {
-            if (string.IsNullOrWhiteSpace(name))
-            {
-                throw new ArgumentException("New habit name cannot be null, empty, or whitespace.");
-            } else
-            {
-                // habit.SetName(name);
-                return true;
-            }
+            return HabitNameValidator.TryValidateName(name, "error message");
         }
 
     }
