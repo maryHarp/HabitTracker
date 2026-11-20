@@ -7,8 +7,8 @@ public partial class SignUpPage : ContentPage
 		InitializeComponent();
 	}
 
-    private void OnSignUpClicked(object? sender, EventArgs e)
+    private async void OnSignUpClicked(object? sender, EventArgs e)
     {
-        
+        await Navigation.PushAsync(new HomePage());
     }
 }

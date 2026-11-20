@@ -8,9 +8,9 @@
             InitializeComponent();
         }
 
-        private void OnLoginClicked(object? sender, EventArgs e)
+        private async void OnLoginClicked(object? sender, EventArgs e)
         {
-            // Handle login logic here
+            await Navigation.PushAsync(new HomePage());
         }
         private async void OnSignUpClicked(object? sender, EventArgs e)
         {
