@@ -33,8 +33,5 @@ namespace HabitTracker
             DescriptionEntry.Text = "";
             FrequencyEntry.Text = "";
         }
-
-        private void AddhabitButton_Clicked(object sender, EventArgs e)
-        { }
     }
 }
