@@ -7,14 +7,12 @@ namespace HabitTracker.Models
     public class Habit
     {
         private static int count = 0;
-
         private const int MinFrequency = 1;
         private const int MaxFrequency = 7;
         private const float MinProgress = 0.0f;
         private const float MaxProgress = 100.0f;
         private const int DeactivateChecker = 7;
         private const float ProgressChecker = 80.0f;
-
         private int _id;
         private string _name;
         private string _description;
@@ -76,9 +74,10 @@ namespace HabitTracker.Models
 
         /**
          * Sets _isActive false if habit date is less than or equal to DeactivateChecker.
-         * Sets _isActive false is _progressRate is greater than ProgressChecker.
+         * If date is greater than DeactivateChekcer, set _isActive false is _progressRate is greater than ProgressChecker.
          * Sets _isActive true if either conditions are met.
          */
+
         public bool Active
         {
             get { return _isActive; }
@@ -101,7 +100,6 @@ namespace HabitTracker.Models
         }
 
         public DateTime CreationDate { get; private set; }
-
 
         private int ActiveDaysTotal()
         {
