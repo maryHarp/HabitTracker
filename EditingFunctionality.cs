@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
+
 namespace HabitTracker
 {
     class EditingFunctionality
@@ -13,9 +14,16 @@ namespace HabitTracker
             await Shell.Current.GoToAsync(nameof(EditPage));
         }
 
-        public bool ChangeHabitName(/*Habit habit, */string name )
+        public bool ChangeHabitName(string name)
         {
-            return HabitNameValidator.TryValidateName(name, "error message");
+            bool validated = HabitNameValidator.TryValidateName(name, "error message");
+            if (validated)
+            {
+                // get the specific habit out of list to change the name
+                // habit.Name = name;
+                return true;
+            }
+            else return false;
         }
 
     }

@@ -45,7 +45,7 @@ namespace HabitTracker.Models
         public string Name
         {
             get { return _name; }
-            private set
+            set
             {
                 if (string.IsNullOrWhiteSpace(value)) throw new ArgumentException("Name cannot be null or blank.");
                 _name = value;
