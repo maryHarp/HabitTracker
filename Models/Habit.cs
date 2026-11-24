@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace HabitTracker.Models
 {
@@ -47,9 +48,18 @@ namespace HabitTracker.Models
             get { return _name; }
             private set
             {
-                if (string.IsNullOrWhiteSpace(value)) throw new ArgumentException("Name cannot be null or blank.");
+                if( IsValidHabitName(value)  )
                 _name = value;
             }
+        }
+
+        public static bool IsValidHabitName(string newName)
+        {
+            if (string.IsNullOrWhiteSpace(newName)) throw new ArgumentException("Name cannot be null or blank.");
+            string pattern = @"^[a-zA-z0-9\s]+$";
+            if (!Regex.IsMatch(newName, pattern)) throw new ArgumentException("Name can only contain letters and numbers.");
+
+            return true;
         }
 
         public string Description

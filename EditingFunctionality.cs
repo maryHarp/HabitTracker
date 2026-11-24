@@ -15,7 +15,8 @@ namespace HabitTracker
 
         public bool ChangeHabitName(/*Habit habit, */string name )
         {
-            return HabitNameValidator.TryValidateName(name, "error message");
+            //habit.Name(name);
+            return true;
         }
 
     }
