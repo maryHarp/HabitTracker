@@ -1,4 +1,5 @@
 ﻿using HabitTracker.Models;
+using Microsoft.Maui.Controls.Internals;
 using Microsoft.Maui.Graphics;
 using System.Numerics;
 using System.Security.Cryptography.X509Certificates;
@@ -10,28 +11,74 @@ namespace HabitTracker
         public MainPage()
         {
             InitializeComponent();
+            CheckForEmptyHabits();
         }
+        int setFrequency;
+        List <Habit> allHabits = new();
+        FormattedString formattedString = new FormattedString();
 
         private void AddHabit_Pressed(object sender, EventArgs e)
         {
-            int setFrequency;
-            List <Habit> allHabits = new();
-            Habit newHabit = new Habit(NameEntry.Text, DescriptionEntry.Text, (Int32.TryParse(FrequencyEntry.Text, out setFrequency) ? setFrequency : 1));
+            if (!string.IsNullOrWhiteSpace(NameEntry.Text))
+            {
+                string setName = NameEntry.Text;
+            }
+
+            if (!string.IsNullOrWhiteSpace(DescriptionEntry.Text))
+            {
+                string setDescription = DescriptionEntry.Text;
+            }
+
+            int setFrequency = (Int32.TryParse(FrequencyEntry.Text, out setFrequency) ? setFrequency : 1);
+            if (setFrequency > 7)
+            {
+                setFrequency = 7;
+            }
+
+            Habit newHabit = new Habit(NameEntry.Text, DescriptionEntry.Text, setFrequency);
+
             allHabits.Add(newHabit);
 
-            for (int i = 0; i < allHabits.Count(); i++ )
-            {
-                Label child = new Label() { Text=allHabits.ElementAt(i).Name, FontSize=28};
-                Label child2 = new Label() { Text=allHabits.ElementAt(i).Description, FontSize=28};
-                Label child3 = new Label() { Text=allHabits.ElementAt(i).Frequency + "", FontSize=28};
-                Habits.Add(child);
-                Habits.Add(child2);
-                Habits.Add(child3);
-            }
+            formattedString.Spans.Add(new Span { Text = newHabit.Name + "\n", FontSize = 28, FontAttributes = FontAttributes.Bold });
+            formattedString.Spans.Add(new Span { Text = newHabit.Description, FontSize = 16 });
+            formattedString.Spans.Add(new Span { Text = "\nHow many days a week: " + newHabit.Frequency, FontSize = 11 });
+
+            Label habit = new Label();
+            habit.Margin = new Thickness(10);
+            habit.WidthRequest = 350;
+            habit.HeightRequest = 100;
+            habit.BackgroundColor = Colors.Beige;
+            habit.FormattedText = formattedString;
+            habit.HorizontalTextAlignment = TextAlignment.Center;
+            habit.LineBreakMode = LineBreakMode.WordWrap;
+
+            Button edit = new Button();
+            edit.Text = "Edit";
+            edit.HorizontalOptions = LayoutOptions.End;
+            edit.VerticalOptions = LayoutOptions.Center;
+            
+            edit.Clicked += (s, e) => { /*Button logic here*/ };
+
+            Habits.Children.Add(habit);
+            Habits.Children.Add(edit);
 
             NameEntry.Text = "";
             DescriptionEntry.Text = "";
             FrequencyEntry.Text = "";
+
+            CheckForEmptyHabits();
+        }
+
+        private void CheckForEmptyHabits()
+        {
+            if (allHabits.Count() == 0)
+            {
+                EmptyMessage.IsVisible = true;
+            }
+            else
+            {
+                EmptyMessage.IsVisible = false;
+            }
         }
     }
 }
