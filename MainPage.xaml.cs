@@ -11,6 +11,7 @@ namespace HabitTracker
         public MainPage()
         {
             InitializeComponent();
+            CheckForEmptyHabits();
         }
         int setFrequency;
         List <Habit> allHabits = new();
@@ -47,6 +48,20 @@ namespace HabitTracker
             NameEntry.Text = "";
             DescriptionEntry.Text = "";
             FrequencyEntry.Text = "";
+
+            CheckForEmptyHabits();
+        }
+
+        private void CheckForEmptyHabits()
+        {
+            if (allHabits.Count() == 0)
+            {
+                EmptyMessage.IsVisible = true;
+            }
+            else
+            {
+                EmptyMessage.IsVisible = false;
+            }
         }
     }
 }

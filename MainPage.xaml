@@ -6,7 +6,16 @@
 
     <Grid RowDefinitions="5*, *" Margin="10">
         <Border Grid.Row="0" Margin="30, 20">
-            <FlexLayout x:Name="Habits" Direction="Column" Wrap="Wrap" />
+            <FlexLayout x:Name="Habits" Direction="Column" Wrap="Wrap">
+                <Label 
+                    x:Name="EmptyMessage" 
+                    Text="You don't have any habits :(&#10;Go ahead and create a new one!"
+                    TextColor="Gray"
+                    FontSize="30"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"
+                    />
+            </FlexLayout>
         </Border>
 
         <FlexLayout Grid.Row="1" Direction="Row" JustifyContent="SpaceEvenly">
