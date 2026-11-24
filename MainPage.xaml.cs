@@ -19,7 +19,24 @@ namespace HabitTracker
 
         private void AddHabit_Pressed(object sender, EventArgs e)
         {
-            Habit newHabit = new Habit(NameEntry.Text, DescriptionEntry.Text, (Int32.TryParse(FrequencyEntry.Text, out setFrequency) ? setFrequency : 1));
+            if (!string.IsNullOrWhiteSpace(NameEntry.Text))
+            {
+                string setName = NameEntry.Text;
+            }
+
+            if (!string.IsNullOrWhiteSpace(DescriptionEntry.Text))
+            {
+                string setDescription = DescriptionEntry.Text;
+            }
+
+            int setFrequency = (Int32.TryParse(FrequencyEntry.Text, out setFrequency) ? setFrequency : 1);
+            if (setFrequency > 7)
+            {
+                setFrequency = 7;
+            }
+
+            Habit newHabit = new Habit(NameEntry.Text, DescriptionEntry.Text, setFrequency);
+
             allHabits.Add(newHabit);
 
             formattedString.Spans.Add(new Span { Text = newHabit.Name + "\n", FontSize = 28, FontAttributes = FontAttributes.Bold });
