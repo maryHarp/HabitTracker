@@ -31,6 +31,10 @@ namespace HabitTracker
             {
                 setDescription = DescriptionEntry.Text;
             }
+            Habit newHabit = new Habit(NameEntry.Text, DescriptionEntry.Text, (Int32.TryParse(FrequencyEntry.Text, out setFrequency) ? setFrequency : 1));
+            allHabits.Add(newHabit);
+
+            FormattedString formattedString = new FormattedString();
 
             setFrequency = (Int32.TryParse(FrequencyEntry.Text, out setFrequency) ? setFrequency : 1);
             if (setFrequency > 7)
@@ -50,7 +54,7 @@ namespace HabitTracker
             habit.Margin = new Thickness(10);
             habit.WidthRequest = 1000;
             habit.HeightRequest = 100;
-            habit.BackgroundColor = Colors.Purple;
+            habit.BackgroundColor = Colors.Beige;
             habit.FormattedText = formattedString;
             habit.HorizontalTextAlignment = TextAlignment.Center;
             habit.LineBreakMode = LineBreakMode.WordWrap;
