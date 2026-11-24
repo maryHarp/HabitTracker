@@ -2,10 +2,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
         x:Class="HabitTracker.EditPage"
              Title="EditPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    
+    <Grid RowDefinitions="5*, *" Margin="10">
+        <Border Grid.Row="0" Margin="30, 20"/>
+        <FlexLayout x:Name="Habits" Direction="Column">
+            <Entry
+                
+                />
+        </FlexLayout>
+
+    </Grid>
+    
 </ContentPage>
