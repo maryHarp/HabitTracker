@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HabitTracker.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -13,11 +14,17 @@ namespace HabitTracker
             await Shell.Current.GoToAsync(nameof(EditPage));
         }
 
-        public bool ChangeHabitName(/*Habit habit, */string name )
+        public bool ChangeHabitName(string name)
         {
-            //habit.Name(name);
-            return true;
-        }
+            bool validated = Habit.IsValidHabitName(name);
+            if (validated)
+            {
+                // get the specific habit out of list to change the name
+                // habit.Name = name;
+                return true;
+            }
+            else return false;
 
+        }
     }
 }
