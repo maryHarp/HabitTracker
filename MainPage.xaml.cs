@@ -55,6 +55,9 @@ namespace HabitTracker
             habit.HorizontalTextAlignment = TextAlignment.Center;
             habit.LineBreakMode = LineBreakMode.WordWrap;
 
+            CheckBox completed = new CheckBox();
+            completed.IsChecked = false;
+
             Button edit = new Button();
             edit.Text = "Edit";
             edit.HorizontalOptions = LayoutOptions.End;
