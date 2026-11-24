@@ -13,20 +13,23 @@ namespace HabitTracker
             InitializeComponent();
             CheckForEmptyHabits();
         }
-        int setFrequency;
-        List <Habit> allHabits = new();
+
+        List<Habit> allHabits = new();
         FormattedString formattedString = new FormattedString();
 
         private void AddHabit_Pressed(object sender, EventArgs e)
         {
+
+            string setName = "";
             if (!string.IsNullOrWhiteSpace(NameEntry.Text))
             {
-                string setName = NameEntry.Text;
+                setName = NameEntry.Text;
             }
 
+            string setDescription = "";
             if (!string.IsNullOrWhiteSpace(DescriptionEntry.Text))
             {
-                string setDescription = DescriptionEntry.Text;
+                setDescription = DescriptionEntry.Text;
             }
 
             int setFrequency = (Int32.TryParse(FrequencyEntry.Text, out setFrequency) ? setFrequency : 1);
@@ -35,7 +38,7 @@ namespace HabitTracker
                 setFrequency = 7;
             }
 
-            Habit newHabit = new Habit(NameEntry.Text, DescriptionEntry.Text, setFrequency);
+            Habit newHabit = new Habit(setName, setDescription, setFrequency);
 
             allHabits.Add(newHabit);
 
@@ -47,7 +50,7 @@ namespace HabitTracker
             habit.Margin = new Thickness(10);
             habit.WidthRequest = 350;
             habit.HeightRequest = 100;
-            habit.BackgroundColor = Colors.Beige;
+            habit.BackgroundColor = Colors.Purple;
             habit.FormattedText = formattedString;
             habit.HorizontalTextAlignment = TextAlignment.Center;
             habit.LineBreakMode = LineBreakMode.WordWrap;
