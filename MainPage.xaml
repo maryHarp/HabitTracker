@@ -6,7 +6,7 @@
 
     <Grid RowDefinitions="5*, *" Margin="10">
         <Border Grid.Row="0" Margin="30, 20">
-            <FlexLayout x:Name="Habits" Direction="Column" />
+            <FlexLayout x:Name="Habits" Direction="Column" Wrap="Wrap" />
         </Border>
 
         <FlexLayout Grid.Row="1" Direction="Row" JustifyContent="SpaceEvenly">
