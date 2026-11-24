@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ABI.Windows.ApplicationModel.Activation;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,7 +7,7 @@ namespace HabitTracker.Models
 {
     public class HabitCollection
     {
-        private List<Habit> _habitList;
+        private static List<Habit> _habitList = new List<Habit>();
 
         public HabitCollection()
         {
@@ -42,10 +43,25 @@ namespace HabitTracker.Models
             // TODO: Paxton's Functionality
         }
 
-        public static void DeleteHabit(Habit habit, int index)
+        public static async Task<bool> DeleteHabit(Habit habit, int index)
         {
-            // TODO: Mary's Functionality
-        }
+            if (habit == null || index == 0 || index >= _habitList.Count)
+                return false;
 
+
+            //handle with ui to comfirm
+            bool userConfirmed = true;
+
+            if (userConfirmed)
+            {
+                _habitList.RemoveAt(index);
+
+                //update save
+
+                return true;
+            }
+            return false;
+        }
     }
+
 }
