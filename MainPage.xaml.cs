@@ -15,12 +15,13 @@ namespace HabitTracker
         }
         int setFrequency;
         List <Habit> allHabits = new();
-        FormattedString formattedString = new FormattedString();
 
         private void AddHabit_Pressed(object sender, EventArgs e)
         {
             Habit newHabit = new Habit(NameEntry.Text, DescriptionEntry.Text, (Int32.TryParse(FrequencyEntry.Text, out setFrequency) ? setFrequency : 1));
             allHabits.Add(newHabit);
+
+            FormattedString formattedString = new FormattedString();
 
             formattedString.Spans.Add(new Span { Text = newHabit.Name + "\n", FontSize = 28, FontAttributes = FontAttributes.Bold });
             formattedString.Spans.Add(new Span { Text = newHabit.Description, FontSize = 16 });
