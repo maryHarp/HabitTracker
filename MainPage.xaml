@@ -15,6 +15,5 @@
             <Entry x:Name="FrequencyEntry" Placeholder="Enter Frequency" WidthRequest="350" FontSize="28" />
             <Button Text="Add Habit" FontSize="28" Pressed="AddHabit_Pressed"/>
         </FlexLayout>
-
     </Grid>
 </ContentPage>
